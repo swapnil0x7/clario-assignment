@@ -24,3 +24,10 @@ describe('extractStudyCode check for case sensitivity', () => {
 		expect(extractStudyCode('k7dty-bxv6t-2')).toBe('K7DTY-BXV6T');
 	});
 });
+
+describe('extractStudyCode check fot forward slash', () => {
+	test('should work for forward slash', () => {
+		expect(extractStudyCode('K7DTY/BXV6T/2')).toBe('K7DTY-BXV6T');
+		expect(extractStudyCode('K7DTY/BXV6T/4')).toBe('K7DTY-BXV6T');
+	});
+});
