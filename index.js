@@ -1,5 +1,5 @@
 // Function to get study reference from substudy reference code
-function getStudyReference(reference) {
+function extractStudyCode(reference) {
 	// Transforming reference code to upper case
 	const upperReference = reference.toUpperCase();
 	const subStudyCodeArray = reference.split(/[-/]/);
@@ -20,13 +20,12 @@ function getStudyReference(reference) {
 	return studyCode;
 }
 
-// Test cases
-console.log(getStudyReference('K7DTY-BXV6T'));
-console.log(getStudyReference('K7DTY-BXV6T-2'));
-console.log(getStudyReference('K7DTY/BXV6T/4'));
-console.log(getStudyReference('k7dty-bxv6t-4'));
-console.log(getStudyReference('K7DTY'));
-console.log(getStudyReference('K7DTY-2'));
-console.log(getStudyReference('K7DTY-BXV6T-1'));
+console.log(extractStudyCode('K7DTY-BXV6T'));
+console.log(extractStudyCode('K7DTY-BXV6T-2'));
+console.log(extractStudyCode('K7DTY/BXV6T/4'));
+console.log(extractStudyCode('k7dty-bxv6t-4'));
+console.log(extractStudyCode('K7DTY'));
+console.log(extractStudyCode('K7DTY-2'));
+// console.log(extractStudyCode('K7DTY-BXV6T-1'));
 
-module.exports = getStudyReference;
+module.exports = extractStudyCode;
